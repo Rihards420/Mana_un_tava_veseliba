@@ -48,6 +48,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.Miega_ievade = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -104,6 +105,7 @@
             this.label5.Size = new System.Drawing.Size(82, 22);
             this.label5.TabIndex = 4;
             this.label5.Text = "0 stundas";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -247,7 +249,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(77)))), ((int)(((byte)(79)))));
-            this.label17.Location = new System.Drawing.Point(473, 335);
+            this.label17.Location = new System.Drawing.Point(473, 390);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(82, 22);
             this.label17.TabIndex = 17;
@@ -274,12 +276,27 @@
             this.label19.TabIndex = 19;
             this.label19.Text = "Tavs profils";
             // 
+            // Miega_ievade
+            // 
+            this.Miega_ievade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(124)))), ((int)(((byte)(146)))));
+            this.Miega_ievade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Miega_ievade.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Miega_ievade.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.Miega_ievade.ForeColor = System.Drawing.Color.Black;
+            this.Miega_ievade.Location = new System.Drawing.Point(418, 332);
+            this.Miega_ievade.Name = "Miega_ievade";
+            this.Miega_ievade.Size = new System.Drawing.Size(195, 29);
+            this.Miega_ievade.TabIndex = 20;
+            this.Miega_ievade.Text = "Ievadīt miegu";
+            this.Miega_ievade.UseVisualStyleBackColor = false;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(218)))), ((int)(((byte)(222)))));
             this.ClientSize = new System.Drawing.Size(1100, 476);
+            this.Controls.Add(this.Miega_ievade);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
@@ -332,5 +349,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button Miega_ievade;
     }
 }
