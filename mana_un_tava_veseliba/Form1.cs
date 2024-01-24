@@ -63,6 +63,11 @@ namespace mana_un_tava_veseliba
             Form2 form2 = new Form2();
             form2.Show();
         }
+
+        private void Pierakstisanas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     class ielogosanas
     {

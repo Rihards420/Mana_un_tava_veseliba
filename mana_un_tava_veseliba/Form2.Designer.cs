@@ -181,6 +181,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form2";
             this.Text = "Registresanas";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
