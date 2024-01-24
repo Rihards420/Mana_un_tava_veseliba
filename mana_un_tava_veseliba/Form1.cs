@@ -35,7 +35,6 @@ namespace mana_un_tava_veseliba
 
         private void pierakstities_Click(object sender, EventArgs e)
         {
-
             Konekcija();
 
 
@@ -55,6 +54,8 @@ namespace mana_un_tava_veseliba
                 }
 
             }
+            Form3 form3 = new Form3();
+            form3.Show();
         }
 
         private void reg_Click(object sender, EventArgs e)

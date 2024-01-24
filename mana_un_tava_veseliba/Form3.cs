@@ -44,9 +44,15 @@ namespace mana_un_tava_veseliba
             uzt.uznemtaisudens = f;
             uzt.izvadeuzturs();
             uzt.ieteikums();
+
         }
 
         private void uzt_ievade_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
