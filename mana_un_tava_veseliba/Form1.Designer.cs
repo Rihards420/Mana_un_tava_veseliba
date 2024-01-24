@@ -143,6 +143,7 @@
             this.Controls.Add(this.pierakstities);
             this.Name = "Pierakstisanas";
             this.Text = "Pierakstisanas";
+            this.Load += new System.EventHandler(this.Pierakstisanas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
