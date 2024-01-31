@@ -49,12 +49,21 @@ namespace mana_un_tava_veseliba
 
         private void uzt_ievade_Click(object sender, EventArgs e)
         {
-
+            Form4 form4 = new Form4();
+            form4.Show();
+            this.Dispose();
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Miega_ievade_Click(object sender, EventArgs e)
+        {
+            Form5 form5 = new Form5();
+            form5.Show();
+            this.Dispose();
         }
     }
     class miegs

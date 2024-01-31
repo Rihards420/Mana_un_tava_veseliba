@@ -23,7 +23,9 @@ namespace mana_un_tava_veseliba
             ed.edveids = comboBox1.Text;
             ed.uzndaudz = textBox1.Text;
             ed.ievadeed();
-
+            Form3 form3 = new Form3();
+            form3.Show();
+            this.Dispose();
         }
     }
     class edienreizie
