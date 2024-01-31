@@ -289,6 +289,7 @@
             this.Miega_ievade.TabIndex = 20;
             this.Miega_ievade.Text = "Ievadīt miegu";
             this.Miega_ievade.UseVisualStyleBackColor = false;
+            this.Miega_ievade.Click += new System.EventHandler(this.Miega_ievade_Click);
             // 
             // Form3
             // 

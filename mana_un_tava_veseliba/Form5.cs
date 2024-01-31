@@ -21,5 +21,12 @@ namespace mana_un_tava_veseliba
         {
 
         }
+
+        private void miegs_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
+            this.Dispose();
+        }
     }
 }

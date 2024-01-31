@@ -44,6 +44,7 @@
             this.miegs.TabIndex = 0;
             this.miegs.Text = "Ievadīt miegu";
             this.miegs.UseVisualStyleBackColor = false;
+            this.miegs.Click += new System.EventHandler(this.miegs_Click);
             // 
             // textBox1
             // 
