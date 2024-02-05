@@ -15,6 +15,7 @@ namespace mana_un_tava_veseliba
         public Form4()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -26,6 +27,11 @@ namespace mana_un_tava_veseliba
             Form3 form3 = new Form3();
             form3.Show();
             this.Dispose();
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+
         }
     }
     class edienreizie

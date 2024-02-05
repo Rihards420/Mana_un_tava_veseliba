@@ -15,6 +15,7 @@ namespace mana_un_tava_veseliba
         public Form3()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void label8_Click(object sender, EventArgs e)
