@@ -108,6 +108,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form4";
             this.Text = "Ēdienreizes ievade";
+            this.Load += new System.EventHandler(this.Form4_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

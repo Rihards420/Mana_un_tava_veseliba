@@ -15,6 +15,7 @@ namespace mana_un_tava_veseliba
         public Form5()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -27,6 +28,11 @@ namespace mana_un_tava_veseliba
             Form3 form3 = new Form3();
             form3.Show();
             this.Dispose();
+        }
+
+        private void Form5_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
