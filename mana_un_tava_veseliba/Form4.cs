@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 
 namespace mana_un_tava_veseliba
 {
@@ -18,30 +13,76 @@ namespace mana_un_tava_veseliba
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
+        public void edienreizeREG()
+        {
+            if (EdienaIZV.SelectedItem != null && !string.IsNullOrWhiteSpace(Kalorijas.Text))
+            {
+                using (SQLiteConnection connection = Konekcija())
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        // parbauda konekciju vai ta ir atverta
+                        if (connection.State == ConnectionState.Open)
+                        {
+                            string query = "INSERT INTO Uzturs (Edienreize_Veids, Uznemto_Kal_Daudz, Uznemtais_Udens_Daudz) " +
+                                           "VALUES (@Edienreize_Veids, @Uznemto_Kal_Daudz, @Uznemtais_Udens_Daudz)";
+
+                            using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                            {
+                                // ievada parametrus
+                                command.Parameters.AddWithValue("@Edienreize_Veids", EdienaIZV.SelectedItem.ToString());
+                                command.Parameters.AddWithValue("@Uznemto_Kal_Daudz", Kalorijas.Text);
+                                command.Parameters.AddWithValue("@Uznemtais_Udens_Daudz", UdensD.Text);
+
+                                // ievieto datus datubaze
+                                int rowsAffected = command.ExecuteNonQuery();
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Dati ievadīti veiksmīgi.");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Neviena tabula nav izmainīta.");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Konekcija neizdevās.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                    finally
+                    {
+                        connection.Close(); // Close the connection after use
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lūdzu izvēlaties ēdienreizes veidu un ievadiet kaloriju daudzumu.");
+            }
+        }
+
+
+
+
+        static SQLiteConnection Konekcija()
+        {
+            return new SQLiteConnection("Data Source=Mana_Tava_Veseliba.db; Version = 3; New = True; Compress =  True;");
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            edienreizie ed = new edienreizie();
-            ed.edveids = comboBox1.Text;
-            ed.uzndaudz = textBox1.Text;
-            ed.ievadeed();
+            edienreizeREG();
             Form3 form3 = new Form3();
             form3.Show();
             this.Dispose();
         }
-
-        private void Form4_Load(object sender, EventArgs e)
-        {
-
-        }
-    }
-    class edienreizie
-    {
-        public string edveids { get; set; }
-        public string uzndaudz { get; set; }
-        public void ievadeed()
-        {
-            //ievada datus datubāzē, aprēķina kopējo uzņemot pārtikas daudzumu, aiznes uz lietotaja profilu atpakaļ
-        }
-
     }
 }

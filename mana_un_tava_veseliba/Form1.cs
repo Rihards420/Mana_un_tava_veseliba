@@ -40,14 +40,15 @@ namespace mana_un_tava_veseliba
             if (string.IsNullOrEmpty(parole.Text) ==false)
             {
                     ielogosanas1.ParbaudaLietotaju();
+                Form3 form3 = new Form3();
+                form3.Show();
             }
             else
             {
                 MessageBox.Show("Ievadiet paroli!");
             }
 
-            Form3 form3 = new Form3();
-            form3.Show();
+           
         }
 
         private void reg_Click(object sender, EventArgs e)

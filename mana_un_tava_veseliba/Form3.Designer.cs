@@ -42,13 +42,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.udens = new System.Windows.Forms.Label();
             this.uzt_ievade = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.Miega_ievade = new System.Windows.Forms.Button();
+            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.SuspendLayout();
             // 
             // label1
@@ -105,7 +106,6 @@
             this.label5.Size = new System.Drawing.Size(82, 22);
             this.label5.TabIndex = 4;
             this.label5.Text = "0 stundas";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -207,16 +207,16 @@
             this.label14.TabIndex = 13;
             this.label14.Text = "Uzņemtais ūdens daudzums:";
             // 
-            // label15
+            // udens
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(77)))), ((int)(((byte)(79)))));
-            this.label15.Location = new System.Drawing.Point(883, 266);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 22);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "0 litri";
+            this.udens.AutoSize = true;
+            this.udens.Font = new System.Drawing.Font("Trebuchet MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.udens.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(77)))), ((int)(((byte)(79)))));
+            this.udens.Location = new System.Drawing.Point(883, 266);
+            this.udens.Name = "udens";
+            this.udens.Size = new System.Drawing.Size(53, 22);
+            this.udens.TabIndex = 14;
+            this.udens.Text = "0 litri";
             // 
             // uzt_ievade
             // 
@@ -231,7 +231,6 @@
             this.uzt_ievade.TabIndex = 15;
             this.uzt_ievade.Text = "Ievadīt ēdienreizi";
             this.uzt_ievade.UseVisualStyleBackColor = false;
-            this.uzt_ievade.Click += new System.EventHandler(this.uzt_ievade_Click);
             // 
             // label16
             // 
@@ -289,7 +288,14 @@
             this.Miega_ievade.TabIndex = 20;
             this.Miega_ievade.Text = "Ievadīt miegu";
             this.Miega_ievade.UseVisualStyleBackColor = false;
-            this.Miega_ievade.Click += new System.EventHandler(this.Miega_ievade_Click);
+            // 
+            // entityCommand1
+            // 
+            this.entityCommand1.CommandTimeout = 0;
+            this.entityCommand1.CommandTree = null;
+            this.entityCommand1.Connection = null;
+            this.entityCommand1.EnablePlanCaching = true;
+            this.entityCommand1.Transaction = null;
             // 
             // Form3
             // 
@@ -303,7 +309,7 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.uzt_ievade);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.udens);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -344,12 +350,13 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label udens;
         private System.Windows.Forms.Button uzt_ievade;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button Miega_ievade;
+        private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
     }
 }

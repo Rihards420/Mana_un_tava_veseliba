@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
+using System.IO;
+using System.Security.Policy;
 
 namespace mana_un_tava_veseliba
 {
@@ -48,62 +51,86 @@ namespace mana_un_tava_veseliba
 
         }
 
-        private void uzt_ievade_Click(object sender, EventArgs e)
-        {
-            Form4 form4 = new Form4();
-            form4.Show();
-            this.Dispose();
-        }
+      
+            private void uzt_ievade_Click(object sender, EventArgs e)
+            {
 
-        private void label5_Click(object sender, EventArgs e)
-        {
+                Form4 form4 = new Form4();
+                form4.Show();
+                this.Dispose();
+            }
 
-        }
+            static SQLiteConnection Konekcija()
+            {
+                SQLiteConnection sqlite_conn;
+                sqlite_conn = new SQLiteConnection("Data Source=Mana_Tava_Veseliba.db; Version = 3; New = True; Compress =  True;");
+                try
+                {
+                    sqlite_conn.Open();
+                }
+                catch (Exception ex)
+                {
 
-        private void Miega_ievade_Click(object sender, EventArgs e)
+                }
+                return sqlite_conn;
+            }
+            private void label5_Click(object sender, EventArgs e)
+            {
+
+            }
+
+            private void Miega_ievade_Click(object sender, EventArgs e)
+            {
+
+
+                Form5 form5 = new Form5();
+                form5.Show();
+                this.Dispose();
+            }
+
+            private void label15_Click(object sender, EventArgs e)
+            {
+
+            }
+    
+        class miegs
         {
-            Form5 form5 = new Form5();
-            form5.Show();
-            this.Dispose();
+            public int miegadaudzums { get; set; }
+            public int miegakvalitate { get; set; }
+            public void izvademiegs()
+            {
+                //izvada iegūtos datus uz ekrāna
+            }
+            public void ieteikums()
+            {
+                //pēc noteiktiem nosacījumiem izlasa no DB ieteikumu un izvada to uz ekrāna
+            }
         }
-    }
-    class miegs
-    {
-        public int miegadaudzums { get; set; }
-        public int miegakvalitate { get; set; }
-        public void izvademiegs()
+        class aktivitates
         {
-            //izvada iegūtos datus uz ekrāna
+            public int aktivitasuilgums { get; set; }
+            public int nodedzinataskalorijas { get; set; }
+            public void izvadeaktivitates()
+            {
+                //izvada iegūtos datus uz ekrāna
+            }
+            public void ieteikums()
+            {
+                //pēc noteiktiem nosacījumiem izlasa no DB ieteikumu un izvada to uz ekrāna
+            }
         }
-        public void ieteikums()
+        class uzturs
         {
-            //pēc noteiktiem nosacījumiem izlasa no DB ieteikumu un izvada to uz ekrāna
-        }
-    }
-    class aktivitates
-    {
-        public int aktivitasuilgums { get; set; }
-        public int nodedzinataskalorijas { get; set; }
-        public void izvadeaktivitates()
-        {
-            //izvada iegūtos datus uz ekrāna
-        }
-        public void ieteikums()
-        {
-            //pēc noteiktiem nosacījumiem izlasa no DB ieteikumu un izvada to uz ekrāna
-        }
-    }
-    class uzturs
-    {
-        public int uznemtaskal { get; set; }
-        public int uznemtaisudens { get; set; }
-        public void izvadeuzturs()
-        {
-            //izvada iegūtos datus uz ekrāna
-        }
-        public void ieteikums()
-        {
-            //pēc noteiktiem nosacījumiem izlasa no DB ieteikumu un izvada to uz ekrāna
+            public int uznemtaskal { get; set; }
+            public int uznemtaisudens { get; set; }
+            public void izvadeuzturs()
+            {
+                //izvada iegūtos datus uz ekrāna
+            }
+            public void ieteikums()
+            {
+                //pēc noteiktiem nosacījumiem izlasa no DB ieteikumu un izvada to uz ekrāna
+            }
         }
     }
 }
